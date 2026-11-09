@@ -22,4 +22,4 @@ void CommandHandler::handle(Client &client, const std::string &line)
 		return;
 	}
 	(this->*(it->second))(client, msg);
-	}
+}

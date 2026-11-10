@@ -28,6 +28,13 @@ private:
 	void invite(Client &, const Message &);
 	void topic(Client &, const Message &);
 	void mode(Client &, const Message &);
+	void cap(Client &, const Message &);
+	void ping(Client &, const Message &);
+	void quit(Client &, const Message &);
+	void part(Client &, const Message &);
+
+	void sendNumeric(Client &c, const std::string &code,
+					 const std::string &params, const std::string &text);
 };
 
 #endif

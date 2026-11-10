@@ -1,8 +1,13 @@
-#pragma once 
+#ifndef NUMERICREPLIES_HPP
+# define NUMERICREPLIES_HPP
+
+# define SERVER_NAME        "ircserv"
 
 # define RPL_WELCOME        "001"
 # define ERR_UNKNOWNCOMMAND "421"
+# define ERR_NICKNAMEINUSE  "433"
 # define ERR_NOTREGISTERED  "451"
 # define ERR_NEEDMOREPARAMS "461"
 # define ERR_PASSWDMISMATCH "464"
-# define ERR_NICKNAMEINUSE  "433"
+
+#endif

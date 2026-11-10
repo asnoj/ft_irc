@@ -1,4 +1,12 @@
-#include "Message.hpp"
+#ifndef COMMANDHANDLER_HPP
+# define COMMANDHANDLER_HPP
+
+# include <map>
+# include <string>
+# include "Message.hpp"
+
+class Server;
+class Client;
 
 class CommandHandler
 {
@@ -21,3 +29,5 @@ private:
 	void topic(Client &, const Message &);
 	void mode(Client &, const Message &);
 };
+
+#endif

@@ -3,17 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Client.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aronnet <aronnet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jcrochet <jcrochet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/09 15:38:41 by aronnet           #+#    #+#             */
-/*   Updated: 2026/11/09 16:19:46 by aronnet          ###   ########.fr       */
+/*   Updated: 2026/11/10 23:04:13 by jcrochet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Client.hpp"
-
-
-#include "Client.hpp"
 
 Client::Client(int fd)
 	: _fd(fd),
@@ -69,7 +66,6 @@ void Client::setRegistered(bool value) { _registered = value; }
 void Client::appendToRecvBuffer(const std::string &data) { _recvBuffer += data; }
 void Client::queueMessage(const std::string &msg) { _sendBuffer += msg; }
 bool Client::hasPendingData() const { return (!_sendBuffer.empty()); }
-const std::string &Client::getSendBuffer() const { return (_sendBuffer); }
 
 const std::string &Client::getSendBuffer() const
 {

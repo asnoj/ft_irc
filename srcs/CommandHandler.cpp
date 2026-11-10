@@ -1,5 +1,18 @@
 #include "../includes/CommandHandler.hpp"
 
+CommandHandler::CommandHandler(Server &server) : _server(server)
+{
+	_commands["PASS"]    = &CommandHandler::pass;
+	_commands["NICK"]    = &CommandHandler::nick;
+	_commands["USER"]    = &CommandHandler::user;
+	_commands["JOIN"]    = &CommandHandler::join;
+	_commands["PRIVMSG"] = &CommandHandler::privmsg;
+	_commands["KICK"]    = &CommandHandler::kick;
+	_commands["INVITE"]  = &CommandHandler::invite;
+	_commands["TOPIC"]   = &CommandHandler::topic;
+	_commands["MODE"]    = &CommandHandler::mode;
+}
+
 // CommandHandler.cpp
 void CommandHandler::handle(Client &client, const std::string &line)
 {
